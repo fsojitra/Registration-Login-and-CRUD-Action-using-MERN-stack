@@ -2,39 +2,37 @@ import React, { Component } from 'react';
 import swal from 'sweetalert';
 import { Button, TextField, Link } from '@material-ui/core';
 const axios = require('axios');
-const bcrypt = require('bcryptjs');
-var salt = bcrypt.genSaltSync(10);
 
-export default class Login extends React.Component {
+export default class Register extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       username: '',
-      password: ''
+      password: '',
+      confirm_password: ''
     };
   }
 
   onChange = (e) => this.setState({ [e.target.name]: e.target.value });
 
-  login = () => {
+  register = () => {
 
-    const pwd = bcrypt.hashSync(this.state.password, salt);
-
-    axios.post('http://localhost:2000/login', {
+    axios.post('http://localhost:2000/register', {
       username: this.state.username,
-      password: pwd,
+      password: this.state.password,
     }).then((res) => {
-      localStorage.setItem('token', res.data.token);
-      localStorage.setItem('user_id', res.data.id);
-      this.props.history.push('/dashboard');
+      swal({
+        text: res.data.title,
+        icon: "success",
+        type: "success"
+      });
+      this.props.history.push('/');
     }).catch((err) => {
-      if (err.response && err.response.data && err.response.data.errorMessage) {
-        swal({
-          text: err.response.data.errorMessage,
-          icon: "error",
-          type: "error"
-        });
-      }
+      swal({
+        text: err.response.data.errorMessage,
+        icon: "error",
+        type: "error"
+      });
     });
   }
 
@@ -42,7 +40,7 @@ export default class Login extends React.Component {
     return (
       <div style={{ marginTop: '200px' }}>
         <div>
-          <h2>Login</h2>
+          <h2>Register</h2>
         </div>
 
         <div>
@@ -68,18 +66,29 @@ export default class Login extends React.Component {
             required
           />
           <br /><br />
+          <TextField
+            id="standard-basic"
+            type="password"
+            autoComplete="off"
+            name="confirm_password"
+            value={this.state.confirm_password}
+            onChange={this.onChange}
+            placeholder="Confirm Password"
+            required
+          />
+          <br /><br />
           <Button
             className="button_style"
             variant="contained"
             color="primary"
             size="small"
             disabled={this.state.username == '' && this.state.password == ''}
-            onClick={this.login}
+            onClick={this.register}
           >
-            Login
-          </Button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <Link href="/register">
             Register
+          </Button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <Link href="/">
+            Login
           </Link>
         </div>
       </div>
