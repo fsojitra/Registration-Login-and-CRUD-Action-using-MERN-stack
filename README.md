@@ -11,7 +11,7 @@ Simlple example of user registration, login and CRUD action with backend restAPI
 ##### Frontend
 - Creating a Component in React and creat routing.
 - Using react and material UI created form to login user and can register new user.
-- Product add, edit, delete and pagination.
+- Product add, edit, delete and pagination also you can search product by name.
 - Making HTTP calls using Axios.
 - Calling multipart api with image upload.
 
@@ -41,3 +41,9 @@ To run react frontend
 
 ### Login and Register screen
 [![login](https://github.com/FSojitra/Registration-Login-and-CRUD-Action-using-MERN-stack/blob/master/login.png)](https://github.com/FSojitra/Registration-Login-and-CRUD-Action-using-MERN-stack/blob/master/login.png)[![register](https://github.com/FSojitra/Registration-Login-and-CRUD-Action-using-MERN-stack/blob/master/register.png)](https://github.com/FSojitra/Registration-Login-and-CRUD-Action-using-MERN-stack/blob/master/register.png)
+
+### Product Add and Edit screen
+[![add](https://github.com/FSojitra/Registration-Login-and-CRUD-Action-using-MERN-stack/blob/master/add.png)](https://github.com/FSojitra/Registration-Login-and-CRUD-Action-using-MERN-stack/blob/master/add.png)[![edit](https://github.com/FSojitra/Registration-Login-and-CRUD-Action-using-MERN-stack/blob/master/edit.png)](https://github.com/FSojitra/Registration-Login-and-CRUD-Action-using-MERN-stack/blob/master/edit.png)
+
+### Product Pagination screen
+[![dashboard](https://github.com/FSojitra/Registration-Login-and-CRUD-Action-using-MERN-stack/blob/master/dashboard.png)](https://github.com/FSojitra/Registration-Login-and-CRUD-Action-using-MERN-stack/blob/master/dashboard.png)
