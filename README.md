@@ -40,6 +40,4 @@ To run react frontend
 2. `npm start`
 
 ### Login and Register screen
-[![login](https://github.com/FSojitra/Registration-Login-and-CRUD-Action-using-MERN-stack/blob/master/login.png)](https://github.com/FSojitra/Registration-Login-and-CRUD-Action-using-MERN-stack/blob/master/login.png)
-
-[![register](https://github.com/FSojitra/Registration-Login-and-CRUD-Action-using-MERN-stack/blob/master/register.png)](https://github.com/FSojitra/Registration-Login-and-CRUD-Action-using-MERN-stack/blob/master/register.png)
+[![login](https://github.com/FSojitra/Registration-Login-and-CRUD-Action-using-MERN-stack/blob/master/login.png)](https://github.com/FSojitra/Registration-Login-and-CRUD-Action-using-MERN-stack/blob/master/login.png)[![register](https://github.com/FSojitra/Registration-Login-and-CRUD-Action-using-MERN-stack/blob/master/register.png)](https://github.com/FSojitra/Registration-Login-and-CRUD-Action-using-MERN-stack/blob/master/register.png)
