@@ -11,6 +11,7 @@ Simlple example of user registration, login and CRUD action with backend restAPI
 ##### Frontend
 - Creating a Component in React and creat routing.
 - Using react and material UI created form to login user and can register new user.
+- Product add, edit, delete and pagination.
 - Making HTTP calls using Axios.
 - Calling multipart api with image upload.
 
@@ -19,21 +20,26 @@ Below noted things you need to install to run this project in your system
 
 - Node.js
 - NPM
-- MongoDB (In your Local System.)
+- MongoDB
 
 ### To Setup
 Clone or download this repository
 
-1. `cd MERN-Stack/backend`
+1. `cd Registration-and-Login-using-MERN-stack/backend`
 2. `npm install`
-3. `cd MERN-Stack/frontend`
+3. `cd Registration-and-Login-using-MERN-stack/frontend`
 4. `npm install`
 
 ### To Run
 To run node server
-1. `cd MERN-Stack/backend`
+1. `cd Registration-and-Login-using-MERN-stack/backend`
 2. `node server.js`
 
 To run react frontend
-1. `cd MERN-Stack/frontend`
+1. `cd Registration-and-Login-using-MERN-stack/frontend`
 2. `npm start`
+
+### Login and Register screen
+[![login](https://github.com/FSojitra/Registration-Login-and-CRUD-Action-using-MERN-stack/blob/master/login.png)](https://github.com/FSojitra/Registration-Login-and-CRUD-Action-using-MERN-stack/blob/master/login.png)
+
+[![register](https://github.com/FSojitra/Registration-Login-and-CRUD-Action-using-MERN-stack/blob/master/register.png)](https://github.com/FSojitra/Registration-Login-and-CRUD-Action-using-MERN-stack/blob/master/register.png)
