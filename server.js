@@ -1,19 +1,21 @@
-var express = require("express");
-var app = express();
+const express = require("express");
+const app = express();
 const bcrypt = require('bcrypt');
-var jwt = require('jsonwebtoken');
-var cors = require('cors');
-var multer = require('multer'),
+const jwt = require('jsonwebtoken');
+const cors = require('cors');
+const multer = require('multer'),
   bodyParser = require('body-parser'),
   path = require('path');
-var mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost/productDB");
-var fs = require('fs');
-var product = require("./model/product.js");
-var user = require("./model/user.js");
+const mongoose = require("mongoose");
 
-var dir = './uploads';
-var upload = multer({
+const MongoDBURI = process.env.MONGO_URI || 'mongodb://localhost/productDB';
+mongoose.connect(MongoDBURI);
+const fs = require('fs');
+const product = require("./model/product.js");
+const user = require("./model/user.js");
+
+const dir = './uploads';
+const upload = multer({
   storage: multer.diskStorage({
 
     destination: function (req, file, callback) {
@@ -367,6 +369,6 @@ app.get("/get-product", (req, res) => {
 
 });
 
-app.listen(2000, () => {
+app.listen(process.env.PORT || 2000, () => {
   console.log("Server is Runing On port 2000");
 });
