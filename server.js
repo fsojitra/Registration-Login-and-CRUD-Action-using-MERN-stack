@@ -14,6 +14,11 @@ const fs = require('fs');
 const product = require("./model/product.js");
 const user = require("./model/user.js");
 
+app.use(express.static(path.join(__dirname, './client/build')))
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, './client/build'))
+});
+
 const dir = './uploads';
 const upload = multer({
   storage: multer.diskStorage({
