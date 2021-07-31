@@ -3,7 +3,8 @@ import swal from 'sweetalert';
 import { Button, TextField, Link } from '@material-ui/core';
 const axios = require('axios');
 const bcrypt = require('bcryptjs');
-var salt = bcrypt.genSaltSync(10);
+const salt = bcrypt.genSaltSync(10);
+const API_URL = process.env.REACT_APP_API_URL;
 
 export default class Login extends React.Component {
   constructor(props) {
@@ -20,7 +21,7 @@ export default class Login extends React.Component {
 
     const pwd = bcrypt.hashSync(this.state.password, salt);
 
-    axios.post('http://localhost:2000/login', {
+    axios.post(`${API_URL}/login`, {
       username: this.state.username,
       password: pwd,
     }).then((res) => {

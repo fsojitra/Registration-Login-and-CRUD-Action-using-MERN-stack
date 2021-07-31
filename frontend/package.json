@@ -25,7 +25,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "local": "REACT_APP_API_URL=https://mern-stack-exapmle.herokuapp.com npm start"
   },
   "eslintConfig": {
     "extends": "react-app"
