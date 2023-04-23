@@ -1,9 +1,10 @@
-import React, { Component } from 'react';
-import swal from 'sweetalert';
-import { Button, TextField, Link } from '@material-ui/core';
-const axios = require('axios');
+import React, { Component } from "react";
+import swal from "sweetalert";
+import { Button, TextField, Link } from "@material-ui/core";
+import { withRouter } from "./utils";
+const axios = require("axios");
 
-export default class Register extends React.Component {
+class Register extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -26,7 +27,8 @@ export default class Register extends React.Component {
         icon: "success",
         type: "success"
       });
-      this.props.history.push('/');
+      // this.props.history.push('/');
+      this.props.navigate("/");
     }).catch((err) => {
       swal({
         text: err.response.data.errorMessage,
@@ -87,7 +89,14 @@ export default class Register extends React.Component {
           >
             Register
           </Button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <Link href="/">
+          <Link
+            // href="/"
+            component="button"
+            style={{ fontFamily: "inherit", fontSize: "inherit" }}
+            onClick={() => {
+              this.props.navigate("/");
+            }}
+          >
             Login
           </Link>
         </div>
@@ -95,3 +104,5 @@ export default class Register extends React.Component {
     );
   }
 }
+
+export default withRouter(Register);
