@@ -1,11 +1,12 @@
-import React, { Component } from 'react';
-import swal from 'sweetalert';
-import { Button, TextField, Link } from '@material-ui/core';
-const axios = require('axios');
-const bcrypt = require('bcryptjs');
+import React, { Component } from "react";
+import swal from "sweetalert";
+import { Button, TextField, Link } from "@material-ui/core";
+import { withRouter } from "./utils";
+const axios = require("axios");
+const bcrypt = require("bcryptjs");
 var salt = bcrypt.genSaltSync(10);
 
-export default class Login extends React.Component {
+class Login extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -17,7 +18,6 @@ export default class Login extends React.Component {
   onChange = (e) => this.setState({ [e.target.name]: e.target.value });
 
   login = () => {
-
     const pwd = bcrypt.hashSync(this.state.password, salt);
 
     axios.post('http://localhost:2000/login', {
@@ -26,7 +26,8 @@ export default class Login extends React.Component {
     }).then((res) => {
       localStorage.setItem('token', res.data.token);
       localStorage.setItem('user_id', res.data.id);
-      this.props.history.push('/dashboard');
+      // this.props.history.push('/dashboard');
+      this.props.navigate("/dashboard");
     }).catch((err) => {
       if (err.response && err.response.data && err.response.data.errorMessage) {
         swal({
@@ -78,7 +79,14 @@ export default class Login extends React.Component {
           >
             Login
           </Button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <Link href="/register">
+          <Link
+            // href="/register"
+            component="button"
+            style={{ fontFamily: "inherit", fontSize: "inherit" }}
+            onClick={() => {
+              this.props.navigate("/register");
+            }}
+          >
             Register
           </Link>
         </div>
@@ -86,3 +94,5 @@ export default class Login extends React.Component {
     );
   }
 }
+
+export default withRouter(Login);

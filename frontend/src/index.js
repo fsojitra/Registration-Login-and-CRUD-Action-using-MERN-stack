@@ -1,21 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Switch, Redirect, Route } from 'react-router';
-import { BrowserRouter, Link } from 'react-router-dom';
+import React from "react";
+import ReactDOM from "react-dom";
+import { Route } from "react-router";
+import { BrowserRouter, Routes } from "react-router-dom";
 
-import Login from './Login';
-import Register from './Register';
-import Dashboard from './Dashboard';
-import './Login.css';
+import Login from "./Login";
+import Register from "./Register";
+import Dashboard from "./Dashboard";
+import "./Login.css";
 
 ReactDOM.render(
-    <BrowserRouter>
-        <Switch>
-            <Route exact path='/' component={Login} />
-            <Route exact path='/register' component={Register} />
-            <Route path='/dashboard' component={Dashboard} />
-            {/* <Route component={NotFound}/> */}
-        </Switch>
-    </BrowserRouter>,
-    document.getElementById('root')
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Login />} />
+      <Route path="/register" element={<Register />} />
+      <Route path="/dashboard" element={<Dashboard />} />
+    </Routes>
+  </BrowserRouter>,
+  document.getElementById("root")
 );

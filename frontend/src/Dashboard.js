@@ -6,9 +6,10 @@ import {
 } from '@material-ui/core';
 import { Pagination } from '@material-ui/lab';
 import swal from 'sweetalert';
+import { withRouter } from './utils';
 const axios = require('axios');
 
-export default class Dashboard extends Component {
+class Dashboard extends Component {
   constructor() {
     super();
     this.state = {
@@ -33,7 +34,8 @@ export default class Dashboard extends Component {
   componentDidMount = () => {
     let token = localStorage.getItem('token');
     if (!token) {
-      this.props.history.push('/login');
+      // this.props.history.push('/login');
+      this.props.navigate("/login");
     } else {
       this.setState({ token: token }, () => {
         this.getProduct();
@@ -102,7 +104,8 @@ export default class Dashboard extends Component {
 
   logOut = () => {
     localStorage.setItem('token', null);
-    this.props.history.push('/');
+    // this.props.history.push('/');
+    this.props.navigate("/");
   }
 
   onChange = (e) => {
@@ -479,3 +482,5 @@ export default class Dashboard extends Component {
     );
   }
 }
+
+export default withRouter(Dashboard);
