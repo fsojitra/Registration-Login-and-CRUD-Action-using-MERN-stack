@@ -306,7 +306,6 @@ class Dashboard extends Component {
               component="label"
             > Upload
             <input
-                id="standard-basic"
                 type="file"
                 accept="image/*"
                 name="file"
@@ -386,12 +385,8 @@ class Dashboard extends Component {
               component="label"
             > Upload
             <input
-                id="standard-basic"
                 type="file"
                 accept="image/*"
-                // inputProps={{
-                //   accept: "image/*"
-                // }}
                 name="file"
                 value={this.state.file}
                 onChange={this.onChange}
