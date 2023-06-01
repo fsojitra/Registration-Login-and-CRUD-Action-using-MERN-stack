@@ -27,6 +27,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "author": "Foram Sojitra",
+  "license": "ISC",
   "eslintConfig": {
     "extends": "react-app"
   },
