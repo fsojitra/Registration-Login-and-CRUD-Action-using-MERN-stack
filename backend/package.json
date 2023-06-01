@@ -8,7 +8,8 @@
     "start": "node server.js"
   },
   "keywords": [
-    "movie"
+    "product",
+    "CRUD"
   ],
   "author": "Foram Sojitra",
   "license": "ISC",
