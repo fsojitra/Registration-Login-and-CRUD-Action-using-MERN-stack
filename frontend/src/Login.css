@@ -3,6 +3,10 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+@media print { 
+  .no-printme  { display: none !important;}
+}
+
 .button_style {
   margin-left: 10px !important;
   margin-right: 10px;

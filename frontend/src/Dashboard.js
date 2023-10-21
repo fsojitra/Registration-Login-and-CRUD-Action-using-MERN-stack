@@ -231,7 +231,7 @@ class Dashboard extends Component {
     return (
       <div>
         {this.state.loading && <LinearProgress size={40} />}
-        <div>
+        <div className="no-printme">
           <h2>Dashboard</h2>
           <Button
             className="button_style"
@@ -404,7 +404,7 @@ class Dashboard extends Component {
               Cancel
             </Button>
             <Button
-              disabled={this.state.name == '' || this.state.desc == '' || this.state.discount == '' || this.state.price == '' || this.state.file == null}
+              disabled={this.state.name === '' || this.state.desc === '' || this.state.discount === '' || this.state.price === '' || this.state.file === null}
               onClick={(e) => this.addProduct()} color="primary" autoFocus>
               Add Product
             </Button>
@@ -416,14 +416,25 @@ class Dashboard extends Component {
         <TableContainer>
           <TextField
             id="standard-basic"
+            className="no-printme"
             type="search"
             autoComplete="off"
             name="search"
             value={this.state.search}
             onChange={this.onChange}
             placeholder="Search by product name"
+            style={{width:'190px'}}
             required
           />
+          <Button
+            className="button_style no-printme"
+            variant="outlined"
+            color="primary"
+            size="small"
+            onClick={(e)=>{window.print()}}
+          >
+            Print product details
+          </Button>
           <Table aria-label="simple table">
             <TableHead>
               <TableRow>
@@ -432,7 +443,7 @@ class Dashboard extends Component {
                 <TableCell align="center">Description</TableCell>
                 <TableCell align="center">Price</TableCell>
                 <TableCell align="center">Discount</TableCell>
-                <TableCell align="center">Action</TableCell>
+                <TableCell align="center" className="no-printme">Action</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -447,7 +458,7 @@ class Dashboard extends Component {
                   <TableCell align="center">{row.discount}</TableCell>
                   <TableCell align="center">
                     <Button
-                      className="button_style"
+                      className="button_style no-printme"
                       variant="outlined"
                       color="primary"
                       size="small"
@@ -456,7 +467,7 @@ class Dashboard extends Component {
                       Edit
                   </Button>
                     <Button
-                      className="button_style"
+                      className="button_style no-printme"
                       variant="outlined"
                       color="secondary"
                       size="small"
@@ -470,7 +481,7 @@ class Dashboard extends Component {
             </TableBody>
           </Table>
           <br />
-          <Pagination count={this.state.pages} page={this.state.page} onChange={this.pageChange} color="primary" />
+          <Pagination className="no-printme" count={this.state.pages} page={this.state.page} onChange={this.pageChange} color="primary" />
         </TableContainer>
 
       </div>

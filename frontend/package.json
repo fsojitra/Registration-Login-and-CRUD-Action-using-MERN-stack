@@ -13,12 +13,12 @@
     "axios": "^0.21.0",
     "bcrypt": "^5.0.0",
     "bcryptjs": "^2.4.3",
-    "material-ui": "^1.0.0-beta.47",
+    "material-ui": "^0.15.0",
     "react": "^16.13.1",
     "react-bootstrap-sweetalert": "^5.2.0",
     "react-dom": "^16.13.1",
     "react-router-dom": "^6.10.0",
-    "react-scripts": "3.4.3",
+    "react-scripts": "^3.0.1",
     "sweetalert": "^2.1.2"
   },
   "scripts": {
