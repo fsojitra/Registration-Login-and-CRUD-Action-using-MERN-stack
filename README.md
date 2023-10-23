@@ -9,7 +9,7 @@ Simlple example of user registration, login and CRUD action with backend restAPI
 - API using which loged in user can add, edit and update it's product.
 - Pagination API to give list of perticular user's added product.
 - JWT token authentication.
-- Print PDF option so you can print or donload product details
+- Print PDF option so you can print or download product details
 
 ##### Frontend
 - Creating a Component in React and creat routing.
